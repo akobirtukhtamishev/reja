@@ -1,0 +1,26 @@
+{
+  "name": "reja",
+  "version": "1.0.0",
+  "description": "bu bizning birinchi loyihamiz",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akobirtukhtamishev/backendgakirish.git"
+  },
+  "author": "ethan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akobirtukhtamishev/backendgakirish/issues"
+  },
+  "homepage": "https://github.com/akobirtukhtamishev/backendgakirish#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^4.22.2",
+    "nodemon": "^3.1.14"
+  }
+}

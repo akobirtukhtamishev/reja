@@ -1,42 +1,58 @@
-console.log("Jack Ma maslahatlari");
+function harfSanoq(harf, soz) {
+    let sanoq = 0;
 
-const list = [
-    "yaxshi talaba boling", // 0-20
-    "Togri boshliq tanlang va koproq xato qiling", // 20-30
-    "o'zingizga ishlashni boshlang", //30-40
-    "siz kuchli bolgan narsalarni qiling", // 40-50
-    "o'z ustizda qattiq ishlang", // 50-60
-    "endi dam oling foydasi yoq endi", // 60+
-];
-
-// callback
-function maslahatBering(a, callback){
-    if(typeof a !== "number") callback("insert a number", null);
-    else if (a <= 20) callback(null, list[0]);
-    else if (a < 20 && a <= 30) callback(null, list[1]);
-    else if (a < 30 && a <= 40) callback(null, list[2]);
-    else if (a < 40 && a <= 50) callback(null, list[3]);
-    else if (a < 50 && a <= 60) callback(null, list[4]);
-    else{
-           // setInterval ishlatilsa har 2 soniyadan keyin javob qaytaradi
-        setInterval(function(){
-            callback(null, list[5]);
-        }, 2000)
+    for (let i = 0; i < soz.length; i++) {
+        if (soz[i] === harf) {
+            sanoq++;
+        }
     }
+
+    return sanoq;
 }
 
+console.log(harfSanoq("a", "ethan"));
 
 
-console.log("Passed here - 0");
 
-maslahatBering(70, (err, data) => {
-    if(err) console.log("ERROR: ", err);
-    else {
-        console.log("Javob: ", data);
-    }
-});
+// console.log("Jack Ma maslahatlari");
 
-console.log("Passed here - 1");
+// const list = [
+//     "yaxshi talaba boling", // 0-20
+//     "Togri boshliq tanlang va koproq xato qiling", // 20-30
+//     "o'zingizga ishlashni boshlang", //30-40
+//     "siz kuchli bolgan narsalarni qiling", // 40-50
+//     "o'z ustizda qattiq ishlang", // 50-60
+//     "endi dam oling foydasi yoq endi", // 60+
+// ];
+
+// // callback
+// function maslahatBering(a, callback){
+//     if(typeof a !== "number") callback("insert a number", null);
+//     else if (a <= 20) callback(null, list[0]);
+//     else if (a < 20 && a <= 30) callback(null, list[1]);
+//     else if (a < 30 && a <= 40) callback(null, list[2]);
+//     else if (a < 40 && a <= 50) callback(null, list[3]);
+//     else if (a < 50 && a <= 60) callback(null, list[4]);
+//     else{
+//            // setInterval ishlatilsa har 2 soniyadan keyin javob qaytaradi
+//         setInterval(function(){
+//             callback(null, list[5]);
+//         }, 2000)
+//     }
+// }
+
+
+
+// console.log("Passed here - 0");
+
+// maslahatBering(70, (err, data) => {
+//     if(err) console.log("ERROR: ", err);
+//     else {
+//         console.log("Javob: ", data);
+//     }
+// });
+
+// console.log("Passed here - 1");
 
 
 

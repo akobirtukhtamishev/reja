@@ -1,16 +1,30 @@
-function harfSanoq(harf, soz) {
+function raqamlarniSanash(string) {
     let sanoq = 0;
-
-    for (let i = 0; i < soz.length; i++) {
-        if (soz[i] === harf) {
+    for(let char of string) {
+        // isNaN bu berilgan qiymatni songa convert qilsa boladimi yoqmi tekshirib beradi agar convert qilib bolsa false aks holda true qiymat qaytaradi
+        if(!isNaN(char)) {
             sanoq++;
         }
     }
-
     return sanoq;
 }
 
-console.log(harfSanoq("a", "ethan"));
+console.log(raqamlarniSanash("12l2l56"));
+
+
+// function harfSanoq(harf, soz) {
+//     let sanoq = 0;
+
+//     for (let i = 0; i < soz.length; i++) {
+//         if (soz[i] === harf) {
+//             sanoq++;
+//         }
+//     }
+
+//     return sanoq;
+// }
+
+// console.log(harfSanoq("a", "ethan"));
 
 
 

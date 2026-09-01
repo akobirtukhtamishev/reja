@@ -7,7 +7,7 @@ const http = require("http");
 // 1. (Kirish code) Expressga kirib kelayotgan malumotlarga bogliq bolganf kodlar yoziladi
 app.use(express.static("public")); // browserdan kirib kelayotgan zaproslar uchun public folder ochiq ekanligini korsatadi
 app.use(express.json());  // kirib kelayotgan json formatdagi datani object holatiga o'girib beradi
-app.use(express.urlencoded({extended: true})); //agar buni yozmasak html formdan post qilingan narsalarni express qabul qilmaydi
+app.use(express.urlencoded({extended: false})); //agar buni yozmasak html formdan post qilingan narsalarni express qabul qilmaydi
 
 // 2. (Session code)
 
@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 
 // 4. Routing code
 app.post("/create-item", (req, res) => {
-    console.log(req.body);
+    console.log({ ...req.body });
     res.json({test: "success"});
 });
 
@@ -32,5 +32,5 @@ app.get("/gift", function(req, res) {
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function() {
-    console.log(`The server is running successfully on port: ${PORT}`);
+    console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`);
 });

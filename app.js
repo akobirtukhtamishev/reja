@@ -32,6 +32,10 @@ app.post("/create-item", (req, res) => {
     });
 });
 
+app.get("/portfolio", (req, res) => {
+    res.render("portfolio");
+})
+
 app.get("/", function(req, res) {
     console.log('user entered /');
     db.collection("plans")

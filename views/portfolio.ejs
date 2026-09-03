@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f1f2f7;
+        color: #222;
+      }
+
+      /* LEFT SIDEBAR */
+
+      .sidebar {
+        position: fixed;
+        left: 15px;
+        top: 15px;
+        bottom: 15px;
+
+        width: 265px;
+
+        background: #fff;
+
+        padding: 35px 40px;
+
+        overflow-y: auto;
+
+        z-index: 100;
+      }
+
+      .profile {
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+
+        margin: 0 auto 20px;
+
+        border-radius: 50%;
+
+        background: #f4f4f4;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile h2 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 7px;
+      }
+
+      .profile p {
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* Social icons */
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        margin: 20px 0 35px;
+      }
+
+      .social-icons a {
+        width: 20px;
+        height: 20px;
+
+        background: #ffb900;
+
+        color: #222;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 10px;
+
+        text-decoration: none;
+
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: #222;
+        color: #fff;
+      }
+
+      /* Sidebar information */
+
+      .info {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+
+        padding: 20px 0;
+      }
+
+      .info-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 10px;
+
+        font-size: 12px;
+      }
+
+      .info-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .label {
+        background: #ffb900;
+        padding: 4px 6px;
+      }
+
+      .value {
+        color: #444;
+      }
+
+      .available {
+        color: #9bc58c;
+      }
+
+      /* Sidebar sections */
+
+      .sidebar-section {
+        padding: 24px 0;
+
+        border-bottom: 1px solid #eee;
+      }
+
+      .sidebar-section h3 {
+        font-size: 16px;
+        font-weight: 500;
+
+        margin-bottom: 18px;
+      }
+
+      .language {
+        margin-bottom: 14px;
+      }
+
+      .language-header {
+        display: flex;
+        justify-content: space-between;
+
+        color: #888;
+
+        font-size: 12px;
+
+        margin-bottom: 6px;
+      }
+
+      .progress {
+        width: 100%;
+        height: 3px;
+
+        background: #eee;
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+
+        background: #f9b900;
+      }
+
+      /* Extra skills */
+
+      .extra-skills li {
+        list-style: none;
+
+        font-size: 12px;
+        color: #777;
+
+        margin-bottom: 10px;
+      }
+
+      .extra-skills i {
+        color: #f9b900;
+        margin-right: 8px;
+      }
+
+      /* MAIN CONTENT */
+
+      .main {
+        margin-left: 280px;
+        margin-right: 75px;
+
+        padding: 15px 28px;
+      }
+
+      /* HERO */
+
+      .hero {
+        position: relative;
+
+        min-height: 395px;
+
+        background: #fff;
+
+        overflow: hidden;
+
+        padding: 85px 50px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+
+        max-width: 530px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+        line-height: 1.3;
+
+        margin-bottom: 20px;
+
+        text-decoration: underline;
+        text-decoration-color: #2e7ff0;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 5px;
+      }
+
+      .hero p {
+        color: #999;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        max-width: 500px;
+
+        margin-bottom: 28px;
+      }
+
+      .hire-btn {
+        display: inline-flex;
+
+        align-items: center;
+        gap: 12px;
+
+        background: #ffb900;
+        color: #222;
+
+        padding: 14px 28px;
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        transition: 0.3s;
+      }
+
+      .hire-btn:hover {
+        background: #222;
+        color: #fff;
+      }
+
+      /* Hero image */
+
+      .hero-image {
+        position: absolute;
+
+        right: 35px;
+        bottom: -5px;
+
+        width: 390px;
+        height: 390px;
+
+        z-index: 1;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+      }
+
+      /* Decorative shapes */
+
+      .shape {
+        position: absolute;
+
+        width: 14px;
+        height: 14px;
+
+        border: 2px solid;
+
+        z-index: 0;
+      }
+
+      .shape.circle {
+        border-radius: 50%;
+      }
+
+      .yellow {
+        border-color: #f5c21b;
+      }
+
+      .green {
+        border-color: #42e66a;
+      }
+
+      .blue {
+        border-color: #4285f4;
+        transform: rotate(25deg);
+      }
+
+      .red {
+        border-color: #ef594f;
+        transform: rotate(60deg);
+      }
+
+      .shape-1 {
+        top: 40px;
+        left: 35px;
+      }
+
+      .shape-2 {
+        top: 50px;
+        left: 450px;
+      }
+
+      .shape-3 {
+        bottom: 25px;
+        left: 70px;
+      }
+
+      .shape-4 {
+        top: 285px;
+        left: 320px;
+      }
+
+      .shape-5 {
+        top: 70px;
+        right: 45px;
+      }
+
+      .shape-6 {
+        bottom: 20px;
+        right: 35px;
+      }
+
+      /* SERVICES */
+
+      .services {
+        padding: 125px 0 60px;
+      }
+
+      .section-title {
+        text-align: center;
+
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+
+        margin-bottom: 22px;
+      }
+
+      .section-title p {
+        max-width: 550px;
+
+        margin: auto;
+
+        color: #999;
+
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .services-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 16px;
+      }
+
+      .service-card {
+        min-height: 195px;
+
+        background: #fff;
+
+        padding: 28px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        transition: 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      .service-icon {
+        font-size: 45px;
+
+        color: #f5b900;
+
+        margin-bottom: 25px;
+      }
+
+      .service-card h3 {
+        font-size: 16px;
+
+        font-weight: 500;
+
+        margin-bottom: 14px;
+      }
+
+      .service-card p {
+        font-size: 12px;
+
+        color: #999;
+
+        line-height: 1.6;
+      }
+
+      .order {
+        color: #f5b900;
+
+        font-size: 10px;
+
+        margin-top: 14px;
+
+        text-decoration: none;
+      }
+
+      /* RIGHT NAVIGATION */
+
+      .right-nav {
+        position: fixed;
+
+        right: 15px;
+        top: 15px;
+        bottom: 15px;
+
+        width: 60px;
+
+        background: #fff;
+
+        display: flex;
+
+        align-items: center;
+
+        flex-direction: column;
+
+        z-index: 100;
+      }
+
+      .theme {
+        margin-top: 40px;
+
+        font-size: 20px;
+
+        color: #333;
+      }
+
+      .nav-menu {
+        margin-top: 150px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 30px;
+
+        align-items: center;
+      }
+
+      .nav-item {
+        position: relative;
+
+        width: 36px;
+        height: 36px;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #aaa;
+
+        background: #f5f5f5;
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        transition: 0.3s;
+      }
+
+      .nav-item.active,
+      .nav-item:hover {
+        background: #ffb900;
+        color: #222;
+      }
+
+      .nav-item::after {
+        content: attr(data-label);
+
+        position: absolute;
+
+        right: 50px;
+
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        background: #222;
+        color: #fff;
+
+        padding: 5px 10px;
+
+        font-size: 10px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        white-space: nowrap;
+      }
+
+      .nav-item:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /*  RESPONSIVE */
+
+      @media (max-width: 1100px) {
+        .sidebar {
+          width: 230px;
+          padding: 30px 25px;
+        }
+
+        .main {
+          margin-left: 245px;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .hero-image {
+          width: 320px;
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .sidebar {
+          position: relative;
+
+          width: calc(100% - 30px);
+
+          margin: 15px;
+
+          top: auto;
+          left: auto;
+          bottom: auto;
+        }
+
+        .right-nav {
+          display: none;
+        }
+
+        .main {
+          margin: 0 15px;
+          padding: 0;
+        }
+
+        .hero {
+          min-height: 650px;
+
+          padding: 60px 35px;
+
+          text-align: center;
+        }
+
+        .hero-content {
+          margin: auto;
+        }
+
+        .hero h1 {
+          font-size: 30px;
+        }
+
+        .hero-image {
+          width: 350px;
+          height: 350px;
+
+          right: 50%;
+          transform: translateX(50%);
+        }
+
+        .services {
+          padding-top: 70px;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 550px) {
+        .hero {
+          min-height: 600px;
+
+          padding: 45px 20px;
+        }
+
+        .hero h1 {
+          font-size: 25px;
+        }
+
+        .hero-image {
+          width: 280px;
+          height: 280px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title h2 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="profile-image">
+          <!-- Replace with your image -->
+          <img src="https://i.pravatar.cc/300?img=12" alt="Profile" />
+        </div>
+
+        <h2>Marcos</h2>
+        <p>Heart</p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fas fa-globe"></i></a>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="info-row">
+          <span class="label">Age:</span>
+          <span class="value">24</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Residence:</span>
+          <span class="value">BD</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Freelance:</span>
+          <span class="available">Available</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Address:</span>
+          <span class="value">Dhaka, Bangladesh</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+
+      <div class="sidebar-section">
+        <h3>Languages</h3>
+
+        <div class="language">
+          <div class="language-header">
+            <span>Bangla</span>
+            <span>100%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 100%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>English</span>
+            <span>80%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 80%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>Spanish</span>
+            <span>60%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 60%"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+
+      <div class="sidebar-section">
+        <h3>Skills</h3>
+
+        <div class="language">
+          <div class="language-header">
+            <span>Html</span>
+            <span>90%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 90%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>CSS</span>
+            <span>85%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 85%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>JS</span>
+            <span>80%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 80%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>PHP</span>
+            <span>75%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 75%"></span>
+          </div>
+        </div>
+
+        <div class="language">
+          <div class="language-header">
+            <span>WordPress</span>
+            <span>85%</span>
+          </div>
+
+          <div class="progress">
+            <span style="width: 85%"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Skills -->
+
+      <div class="sidebar-section extra-skills">
+        <h3>Extra Skills</h3>
+
+        <ul>
+          <li>
+            <i class="far fa-plus-square"></i>
+            Bootstrap, Materialize
+          </li>
+
+          <li>
+            <i class="far fa-plus-square"></i>
+            Stylus, Sass, Less
+          </li>
+
+          <li>
+            <i class="far fa-plus-square"></i>
+            Gulp, Webpack, Grunt
+          </li>
+
+          <li>
+            <i class="far fa-plus-square"></i>
+            GIT Knowledge
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+      <!-- HERO -->
+
+      <section class="hero">
+        <!-- Decorative shapes -->
+        <div class="shape circle yellow shape-1"></div>
+        <div class="shape circle green shape-2"></div>
+        <div class="shape circle green shape-3"></div>
+        <div class="shape blue shape-4"></div>
+        <div class="shape yellow shape-5"></div>
+        <div class="shape red shape-6"></div>
+
+        <div class="hero-content">
+          <h1>
+            Software Engineer in<br />
+            IT company
+          </h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+            volutpat feugiat placerat lobortis. Natoque rutrum semper sed
+            suspendisse nunc lectus.
+          </p>
+
+          <a href="#" class="hire-btn">
+            HIRE ME
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://i.pravatar.cc/600?img=12" alt="Doctor" />
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+
+      <section class="services">
+        <div class="section-title">
+          <h2>My Services</h2>
+
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Lorem ipsum.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+
+            <h3>Web Development</h3>
+
+            <p>Blog, E-Commerce</p>
+          </div>
+
+          <!-- Card 2 -->
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-object-group"></i>
+            </div>
+
+            <h3>UI/UX Design</h3>
+
+            <p>Mobile App, Website Design</p>
+          </div>
+
+          <!-- Card 3 -->
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-microphone"></i>
+            </div>
+
+            <h3>Sound Design</h3>
+
+            <p>Voice Over, Beat Making</p>
+          </div>
+
+          <!-- Card 4 -->
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+
+            <h3>Game Design</h3>
+
+            <p>Character Design, Props & Objects</p>
+          </div>
+
+          <!-- Card 5 -->
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+
+            <h3>Photography</h3>
+
+            <p>Portrait, Product Photography</p>
+          </div>
+
+          <!-- Card 6 -->
+
+          <div class="service-card">
+            <h3>Advertising</h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </p>
+
+            <a href="#" class="order"> ORDER NOW → </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RIGHT NAV-->
+
+    <nav class="right-nav">
+      <div class="theme">
+        <i class="fas fa-moon"></i>
+      </div>
+
+      <div class="nav-menu">
+        <a href="#" class="nav-item active" data-label="Home">
+          <i class="fas fa-home"></i>
+        </a>
+
+        <a href="#" class="nav-item" data-label="Services">
+          <i class="fas fa-code"></i>
+        </a>
+
+        <a href="#" class="nav-item" data-label="Education">
+          <i class="fas fa-user-graduate"></i>
+        </a>
+
+        <a href="#" class="nav-item" data-label="Portfolio">
+          <i class="fas fa-briefcase"></i>
+        </a>
+
+        <a href="#" class="nav-item" data-label="Contact">
+          <i class="fas fa-comment"></i>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -9,7 +9,7 @@ function raqamlarniSanash(string) {
     return sanoq;
 }
 
-console.log(raqamlarniSanash("12l2l56"));
+console.log(raqamlarniSanash("-1asfafaf-222"));
 
 
 // function harfSanoq(harf, soz) {

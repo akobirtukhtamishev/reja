@@ -32,8 +32,8 @@ app.post("/create-item", (req, res) => {
     });
 });
 
-app.get("/portfolio", (req, res) => {
-    res.render("portfolio");
+app.get("/author", (req, res) => {
+    res.render("author");
 })
 
 app.get("/", function(req, res) {

@@ -1,9 +1,7 @@
-const { default: axios } = require("axios");
-
 console.log("FrontEnd JS ishga tushdi");
 
 function itemTemplate(item) {
-    return `<li>
+  return `<li>
           <span class="item-text">${item.reja}</span>
             <div>
               <button data-id="${item._id}">
@@ -11,23 +9,48 @@ function itemTemplate(item) {
               </button>
               <button data-id="${item._id}">O'chirish</button>
             </div>
-        </li>`
+        </li>`;
 }
 
 let createField = document.getElementById("create-field");
 
-document.getElementById("create-form").addEventListener("submit", function(e){
-    e.preventDefault('http://localhost:3000');
+document.getElementById("create-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    axios.post("/create-item", {reja: createField.value})
+  axios
+    .post("/create-item", { reja: createField.value })
     .then((response) => {
-        document
-            .getElementById("item-list")
-            .insertAdjacentHTML("beforeend", itemTemplate(response.data));
-        createField.value = "";
-        createField.focus();
+      document
+        .getElementById("item-list")
+        .insertAdjacentHTML("beforeend", itemTemplate(response.data));
+      createField.value = "";
+      createField.focus();
     })
     .catch((err) => {
-        console.log("Iltimos qaytadan harakat qiling");
+      console.log("Iltimos qaytadan harakat qiling");
     });
+});
+
+document.addEventListener("click", function(e) {
+    // console.log(e);
+
+    //delete operations
+    if(e.target.classList.contains("delete-me")) {
+      if(confirm("O'chirmoqchimisiz?")){
+       axios.post("/delete-item", {id: e.target.getAttribute("data-id") })
+       .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+       })
+       .catch((err) => {
+          console.log("Iltimos qaytadan harakat qiling");
+       });
+      }
+    }
+
+
+    // edit operations
+    if(e.target.classList.contains("edit-me")) {
+        alert("Siz o'chirish tugmasini bosdingiz");
+    }
 });

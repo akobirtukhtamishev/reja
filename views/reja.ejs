@@ -48,7 +48,7 @@
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
       }
 
-      #goalInput {
+      #create-field {
         flex: 1;
         height: 42px;
         border: 2px solid #a9cdfb;
@@ -60,12 +60,12 @@
         box-shadow: inset 0 0 0 1px #dceafd;
       }
 
-      #goalInput:focus {
+      #create-field:focus {
         border-color: #79aef1;
         box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.12);
       }
 
-      button {
+      .item-text {
         border: 0;
         cursor: pointer;
         font: inherit;
@@ -75,14 +75,14 @@
           filter 0.15s ease;
       }
 
-      button:active {
+      .item-text:active {
         transform: translateY(1px);
       }
-      button:hover {
+      .item-text:hover {
         filter: brightness(0.96);
       }
 
-      .add-btn {
+      .item-text {
         height: 42px;
         padding: 0 19px;
         border-radius: 22px;
@@ -129,7 +129,7 @@
         flex: 0 0 auto;
         display: grid;
         place-items: center;
-        color: white;
+        color: blue;
         font-size: 15px;
       }
 
@@ -188,7 +188,7 @@
       <form id="create-form" action ="/create-item" method="POST">
         <section class="input-card">
           <input
-            id="goalInput"
+            id="create-field"
             type="text"
             placeholder="Rejalaringizni kiriting"
             name="reja"
@@ -209,10 +209,10 @@
         <li>
           <span class="item-text"><%=item.reja%></span>
             <div>
-              <button data-id="<%=item._id%>">
+              <button data-id="<%=item._id%>" class="edit-me">
                 O'zgartirish
               </button>
-              <button data-id="<%=item._id%>">O'chirish</button>
+              <button data-id="<%=item._id%>" class="delete-me">O'chirish</button>
             </div>
         </li>
       <% }) %>
@@ -221,7 +221,7 @@
       <button class="clear-btn" id="clearBtn">Hamma Rejalarni O'chirish</button>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios@<x.x.x>/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
     <script src="/browser.js"></script>
   </body>
 </html>

@@ -1,15 +1,77 @@
-function raqamlarniSanash(string) {
-    let sanoq = 0;
-    for(let char of string) {
-        // isNaN bu berilgan qiymatni songa convert qilsa boladimi yoqmi tekshirib beradi agar convert qilib bolsa false aks holda true qiymat qaytaradi
-        if(!isNaN(char)) {
-            sanoq++;
-        }
+const moment = require("moment");
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${moment().format("HH:mm")}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
+    );
+  }
+
+  sotish(mahsulot, soni) {
+    if (mahsulot === "non") {
+      this.non -= soni;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon -= soni;
+    } else if (mahsulot === "cola") {
+      this.cola -= soni;
+    } else {
+      console.log("Bunday mahsulot mavjud emas!");
+      return;
     }
-    return sanoq;
+
+    console.log(
+      `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} sotildi.`
+    );
+  }
+
+  qabul(mahsulot, soni) {
+    if (mahsulot === "non") {
+      this.non += soni;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon += soni;
+    } else if (mahsulot === "cola") {
+      this.cola += soni;
+    } else {
+      console.log("Bunday mahsulot mavjud emas!");
+      return;
+    }
+
+    console.log(
+      `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} qabul qilindi.`
+    );
+  }
 }
 
-console.log(raqamlarniSanash("-1asfafaf-222"));
+const shop = new Shop(7, 22, 5);
+
+shop.qoldiq();
+
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+
+shop.qoldiq();
+
+
+
+
+// function raqamlarniSanash(string) {
+//     let sanoq = 0;
+//     for(let char of string) {
+//         // isNaN bu berilgan qiymatni songa convert qilsa boladimi yoqmi tekshirib beradi agar convert qilib bolsa false aks holda true qiymat qaytaradi
+//         if(!isNaN(char)) {
+//             sanoq++;
+//         }
+//     }
+//     return sanoq;
+// }
+
+// console.log(raqamlarniSanash("-1asfafaf-222"));
 
 
 // function harfSanoq(harf, soz) {

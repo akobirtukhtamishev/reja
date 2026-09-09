@@ -1,61 +1,71 @@
-const moment = require("moment");
-
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-
-  qoldiq() {
-    console.log(
-      `Hozir ${moment().format("HH:mm")}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
-    );
-  }
-
-  sotish(mahsulot, soni) {
-    if (mahsulot === "non") {
-      this.non -= soni;
-    } else if (mahsulot === "lagmon") {
-      this.lagmon -= soni;
-    } else if (mahsulot === "cola") {
-      this.cola -= soni;
-    } else {
-      console.log("Bunday mahsulot mavjud emas!");
-      return;
-    }
-
-    console.log(
-      `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} sotildi.`
-    );
-  }
-
-  qabul(mahsulot, soni) {
-    if (mahsulot === "non") {
-      this.non += soni;
-    } else if (mahsulot === "lagmon") {
-      this.lagmon += soni;
-    } else if (mahsulot === "cola") {
-      this.cola += soni;
-    } else {
-      console.log("Bunday mahsulot mavjud emas!");
-      return;
-    }
-
-    console.log(
-      `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} qabul qilindi.`
-    );
-  }
+function checkContent(a, b) {
+  return String(a).split("").sort().join("") === String(b).split("").sort().join("");
 }
+console.log(checkContent("123", 321));
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent(12345, 54321));            
+console.log(checkContent("12345", 54321));          
+console.log(checkContent(123, 456));              
 
-const shop = new Shop(7, 22, 5);
 
-shop.qoldiq();
+// const moment = require("moment");
 
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-shop.qoldiq();
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${moment().format("HH:mm")}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
+//     );
+//   }
+
+//   sotish(mahsulot, soni) {
+//     if (mahsulot === "non") {
+//       this.non -= soni;
+//     } else if (mahsulot === "lagmon") {
+//       this.lagmon -= soni;
+//     } else if (mahsulot === "cola") {
+//       this.cola -= soni;
+//     } else {
+//       console.log("Bunday mahsulot mavjud emas!");
+//       return;
+//     }
+
+//     console.log(
+//       `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} sotildi.`
+//     );
+//   }
+
+//   qabul(mahsulot, soni) {
+//     if (mahsulot === "non") {
+//       this.non += soni;
+//     } else if (mahsulot === "lagmon") {
+//       this.lagmon += soni;
+//     } else if (mahsulot === "cola") {
+//       this.cola += soni;
+//     } else {
+//       console.log("Bunday mahsulot mavjud emas!");
+//       return;
+//     }
+
+//     console.log(
+//       `${moment().format("HH:mm")}da ${soni}ta ${mahsulot} qabul qilindi.`
+//     );
+//   }
+// }
+
+// const shop = new Shop(7, 22, 5);
+
+// shop.qoldiq();
+
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+
+// shop.qoldiq();
 
 
 

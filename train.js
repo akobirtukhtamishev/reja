@@ -1,11 +1,19 @@
-function checkContent(a, b) {
-  return String(a).split("").sort().join("") === String(b).split("").sort().join("");
+function getReverse(str) {
+    return str.split("").reverse().join("");
 }
-console.log(checkContent("123", 321));
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent(12345, 54321));            
-console.log(checkContent("12345", 54321));          
-console.log(checkContent(123, 456));              
+
+console.log(getReverse("hi"));
+
+
+
+// function checkContent(a, b) {
+//   return String(a).split("").sort().join("") === String(b).split("").sort().join("");
+// }
+// console.log(checkContent("123", 321));
+// console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent(12345, 54321));            
+// console.log(checkContent("12345", 54321));          
+// console.log(checkContent(123, 456));              
 
 
 // const moment = require("moment");

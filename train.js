@@ -1,18 +1,34 @@
-function findDoublers(str) {
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i + 1; j < str.length; j++) {
-            if (str[i] === str[j]) {
-                return true;
-            }
+function getHighestIndex(arr) {
+    let highest = arr[0];
+    let highestIndex = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > highest) {
+            highest = arr[i];
+            highestIndex = i;
         }
     }
-
-    return false;
+    return highestIndex;
 }
 
+console.log(getHighestIndex([71, 21, 12, 21, 95]));
 
-console.log(findDoublers("hello"));
-console.log(findDoublers("loped"));
+
+// function findDoublers(str) {
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = i + 1; j < str.length; j++) {
+//             if (str[i] === str[j]) {
+//                 return true;
+//             }
+//         }
+//     }
+//
+//     return false;
+// }
+//
+//
+// console.log(findDoublers("hello"));
+// console.log(findDoublers("loped"));
 
 
 

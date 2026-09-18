@@ -1,17 +1,35 @@
-function getHighestIndex(arr) {
-    let highest = arr[0];
-    let highestIndex = 0;
+function countVowels(str) {
+    let vowels = "aeiou";
+    let count = 0;
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > highest) {
-            highest = arr[i];
-            highestIndex = i;
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            count++;
         }
     }
-    return highestIndex;
+
+    return count;
 }
 
-console.log(getHighestIndex([71, 21, 12, 21, 95]));
+console.log(countVowels("ethan"));
+
+
+
+
+// function getHighestIndex(arr) {
+//     let highest = arr[0];
+//     let highestIndex = 0;
+//
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > highest) {
+//             highest = arr[i];
+//             highestIndex = i;
+//         }
+//     }
+//     return highestIndex;
+// }
+//
+// console.log(getHighestIndex([71, 21, 12, 21, 95]));
 
 
 // function findDoublers(str) {
